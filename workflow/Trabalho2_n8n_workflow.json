@@ -1,13 +1,16 @@
 {
-  "name": "Trabalho 2 — GRASP e AG — 8 Rainhas (Pipeline Completo)",
+  "name": "My workflow",
   "nodes": [
     {
       "parameters": {},
-      "id": "trigger-manual-t2",
+      "id": "1c78bc60-604f-4e74-a982-858c0f1474be",
       "name": "Iniciar Experimento",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
-      "position": [240, 300]
+      "position": [
+        0,
+        0
+      ]
     },
     {
       "parameters": {
@@ -16,13 +19,18 @@
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "{ \"num_execucoes\": 50, \"max_iter\": 1000, \"alpha\": 0.3 }",
-        "options": { "timeout": 300000 }
+        "options": {
+          "timeout": 300000
+        }
       },
-      "id": "grasp-node",
+      "id": "a7aaf15e-5fd1-4268-99fe-82e41011254b",
       "name": "GRASP (50 execuções)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
-      "position": [520, 180]
+      "position": [
+        288,
+        0
+      ]
     },
     {
       "parameters": {
@@ -31,44 +39,65 @@
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "{ \"num_execucoes\": 50, \"max_geracoes\": 1000, \"tamanho_populacao\": 100 }",
-        "options": { "timeout": 600000 }
+        "options": {
+          "timeout": 600000
+        }
       },
-      "id": "ag-node",
+      "id": "fa59e89c-892e-4141-bcea-ac682e487340",
       "name": "Algoritmo Genético (50 execuções)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
-      "position": [520, 420]
+      "position": [
+        592,
+        0
+      ]
     },
     {
       "parameters": {
         "jsCode": "// Aguarda os dois ramos e une os dados para análise pelo Gemini\nconst grasp_data = $('GRASP (50 execuções)').first().json;\nconst ag_data    = $('Algoritmo Genético (50 execuções)').first().json;\n\nreturn [{\n  json: {\n    grasp:      grasp_data.execucoes || [],\n    genetico:   ag_data.execucoes   || [],\n    total_grasp: grasp_data.total   || 0,\n    total_ag:    ag_data.total      || 0\n  }\n}];"
       },
-      "id": "merge-node",
+      "id": "1200223f-5e7c-4abc-ac2c-bbb669507ea3",
       "name": "Unir Resultados",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [820, 300]
+      "position": [
+        880,
+        0
+      ]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=SUA_CHAVE_AQUI",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=AIzaSyC1JRUu-OaDNNzgvWd08FjaUsTF2fKFNbA",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            { "name": "Content-Type", "value": "application/json" }
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
           ]
         },
         "sendBody": true,
         "specifyBody": "=json",
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
         "jsonBody": "={{ JSON.stringify({\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"Você é um analista especialista em algoritmos de IA. Analise os dados de 50 execuções de DOIS algoritmos (GRASP e Algoritmo Genético) para o Problema das 8-Rainhas e retorne SOMENTE um JSON válido (sem markdown, sem texto extra) com as seguintes chaves:\\n\\nMÉTRICAS DO GRASP:\\n- media_iteracoes_grasp (número)\\n- desvio_padrao_iteracoes_grasp (número)\\n- media_tempo_ms_grasp (número)\\n- desvio_padrao_tempo_ms_grasp (número)\\n- taxa_sucesso_pct_grasp (percentual 0-100)\\n- valor_medio_h_final_grasp (número)\\n\\nMÉTRICAS DO AG:\\n- media_geracoes_ag (número)\\n- desvio_padrao_geracoes_ag (número)\\n- media_tempo_ms_ag (número)\\n- desvio_padrao_tempo_ms_ag (número)\\n- taxa_sucesso_pct_ag (percentual 0-100)\\n- valor_medio_h_final_ag (número)\\n- media_fitness_final_ag (número)\\n\\nANÁLISE COMPARATIVA:\\n- algoritmo_mais_rapido: qual teve menor tempo médio\\n- algoritmo_maior_taxa_sucesso: qual teve mais sucessos\\n- algoritmo_mais_eficiente_iteracoes: qual convergiu mais rápido\\n- conclusao_geral: parágrafo em português comparando os dois algoritmos\\n\\nTOP 5 SOLUÇÕES DO AG (as_cinco_melhores_solucoes_ag): array com estado_final, h_final, geracao_parada e tempo_ms\\n\\nCATEGORIZACAO_GRASP (array com 50 objetos — id_execucao, categoria, destaque)\\nCATEGORIZACAO_AG (array com 50 objetos — id_execucao, categoria, destaque)\\n\\nDados GRASP (50 execuções):\\n\" + JSON.stringify($json.grasp) + \"\\n\\nDados AG (50 execuções):\\n\" + JSON.stringify($json.genetico)\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"responseMimeType\": \"application/json\",\n    \"temperature\": 0.1\n  }\n}) }}",
-        "options": { "timeout": 120000 }
+        "options": {
+          "timeout": 120000
+        }
       },
-      "id": "gemini-node",
+      "id": "7e177bac-ab0f-4502-9677-2a92fd84631a",
       "name": "Análise Gemini (Comparativa)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [1120, 300]
+      "position": [
+        1184,
+        0
+      ]
     },
     {
       "parameters": {
@@ -79,33 +108,44 @@
         "jsonBody": "={{ $json }}",
         "options": {}
       },
-      "id": "salvar-metricas-node",
+      "id": "81a1e00b-a210-4bca-abed-c87281c22205",
       "name": "Salvar Métricas Gemini",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
-      "position": [1420, 300]
+      "position": [
+        1488,
+        0
+      ]
     },
     {
       "parameters": {
         "method": "POST",
         "url": "http://127.0.0.1:5000/gerar-graficos",
-        "options": { "timeout": 120000 }
+        "options": {
+          "timeout": 120000
+        }
       },
-      "id": "graficos-node",
+      "id": "9ef8d51a-4aa2-45ca-80aa-957c59f1ec78",
       "name": "Gerar Gráficos e Tabelas",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
-      "position": [1720, 300]
+      "position": [
+        1792,
+        0
+      ]
     },
     {
       "parameters": {
         "jsCode": "const graficos = $input.first().json;\n\nreturn [{\n  json: {\n    pipeline_status: graficos.status === 'sucesso'\n      ? 'PIPELINE COMPLETO — Trabalho 2 (GRASP + AG)'\n      : 'CONCLUÍDO COM AVISOS — verifique erros',\n    arquivos_gerados: [\n      'resultados/execucoes_grasp.csv',\n      'resultados/execucoes_genetico.csv',\n      'resultados/metricas_gemini.json',\n      'resultados/comp_grafico1_taxa_sucesso.png',\n      'resultados/comp_grafico2_tempo_execucao.png',\n      'resultados/comp_grafico3_iteracoes_geracoes.png',\n      'resultados/comp_grafico4_hfinal_execucoes.png',\n      'resultados/comp_tabela_resumo_estatistico.png',\n      'resultados/comp_tabela_top5_ag.png'\n    ],\n    erros:  graficos.erros || [],\n    log:    (graficos.log || '').slice(0, 500)\n  }\n}];"
       },
-      "id": "resultado-final-node",
+      "id": "b919bc99-1636-4690-bfc8-0cc67bccdda0",
       "name": "Resultado Final",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2020, 300]
+      "position": [
+        2080,
+        0
+      ]
     }
   ],
   "pinData": {},
@@ -113,39 +153,78 @@
     "Iniciar Experimento": {
       "main": [
         [
-          { "node": "GRASP (50 execuções)",              "type": "main", "index": 0 },
-          { "node": "Algoritmo Genético (50 execuções)", "type": "main", "index": 0 }
+          {
+            "node": "GRASP (50 execuções)",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
     "GRASP (50 execuções)": {
       "main": [
-        [{ "node": "Unir Resultados", "type": "main", "index": 0 }]
+        [
+          {
+            "node": "Algoritmo Genético (50 execuções)",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Algoritmo Genético (50 execuções)": {
       "main": [
-        [{ "node": "Unir Resultados", "type": "main", "index": 1 }]
+        [
+          {
+            "node": "Unir Resultados",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Unir Resultados": {
       "main": [
-        [{ "node": "Análise Gemini (Comparativa)", "type": "main", "index": 0 }]
+        [
+          {
+            "node": "Análise Gemini (Comparativa)",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Análise Gemini (Comparativa)": {
       "main": [
-        [{ "node": "Salvar Métricas Gemini", "type": "main", "index": 0 }]
+        [
+          {
+            "node": "Salvar Métricas Gemini",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Salvar Métricas Gemini": {
       "main": [
-        [{ "node": "Gerar Gráficos e Tabelas", "type": "main", "index": 0 }]
+        [
+          {
+            "node": "Gerar Gráficos e Tabelas",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Gerar Gráficos e Tabelas": {
       "main": [
-        [{ "node": "Resultado Final", "type": "main", "index": 0 }]
+        [
+          {
+            "node": "Resultado Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -154,11 +233,10 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "trabalho2-grasp-ag-v1",
+  "versionId": "e31f2ae1-b7e0-40f6-aac2-2df946772489",
   "meta": {
-    "instanceId": "91140c6e9aa6b1ea89eb368e4a8070ca96c95d1ceb8978a109abb10f727e8acf",
-    "templateCredsSetupCompleted": true
+    "instanceId": "31506feb2efd2235887122eaeac6410d7376c8378399bb63e12ade16c16def7b"
   },
-  "id": "Trabalho2GraspAG",
-  "tags": ["Trabalho 2", "GRASP", "Algoritmo Genético", "8-Rainhas"]
+  "id": "z8QuCkzYXvsiAAZN",
+  "tags": []
 }
