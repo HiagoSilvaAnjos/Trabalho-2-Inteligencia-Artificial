@@ -68,7 +68,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=AIzaSyC1JRUu-OaDNNzgvWd08FjaUsTF2fKFNbA",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=SUA_CHAVE_AQUI",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -233,7 +233,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "e31f2ae1-b7e0-40f6-aac2-2df946772489",
+  "versionId": "9bc58aff-dbdc-4325-a51c-9c9bd225d339",
   "meta": {
     "instanceId": "31506feb2efd2235887122eaeac6410d7376c8378399bb63e12ade16c16def7b"
   },
