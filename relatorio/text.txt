@@ -1,0 +1,1 @@
+Objetivo desta pasta: Guardar a documentação final e formal do projeto. Esta pasta é destinada à versão final do trabalho prático escrito (em PDF ou DOCX), contendo a contextualização teórica, a metodologia do Hill Climbing, os gráficos gerados e a discussão crítica dos resultados e melhores soluções.

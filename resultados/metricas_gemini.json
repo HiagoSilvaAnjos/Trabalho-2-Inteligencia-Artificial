@@ -1,0 +1,286 @@
+{
+    "media_iteracoes": 9.266666666666667,
+    "desvio_padrao_iteracoes": 4.28226316073383,
+    "media_tempo_ms": 2.854,
+    "desvio_padrao_tempo_ms": 1.414027345327072,
+    "taxa_sucesso_pct": 53.333333333333336,
+    "valor_medio_h_final": 0.4666666666666667,
+    "max_iteracoes": 16,
+    "min_iteracoes": 3,
+    "media_reinicios": 0.0,
+    "quantidade_platos": 12,
+    "as_cinco_melhores_solucoes_distintas": [
+        {
+            "estado_inicial": [
+                5,
+                5,
+                1,
+                3,
+                3,
+                3,
+                7,
+                5
+            ],
+            "estado_final": [
+                2,
+                5,
+                1,
+                6,
+                0,
+                3,
+                7,
+                4
+            ],
+            "h_final": 0,
+            "tempo_ms": 0.98
+        },
+        {
+            "estado_inicial": [
+                7,
+                1,
+                2,
+                2,
+                7,
+                6,
+                5,
+                0
+            ],
+            "estado_final": [
+                7,
+                1,
+                4,
+                2,
+                0,
+                6,
+                3,
+                5
+            ],
+            "h_final": 0,
+            "tempo_ms": 1.03
+        },
+        {
+            "estado_inicial": [
+                2,
+                1,
+                3,
+                6,
+                6,
+                5,
+                6,
+                2
+            ],
+            "estado_final": [
+                2,
+                7,
+                3,
+                6,
+                0,
+                5,
+                1,
+                4
+            ],
+            "h_final": 0,
+            "tempo_ms": 1.14
+        },
+        {
+            "estado_inicial": [
+                0,
+                6,
+                2,
+                1,
+                3,
+                4,
+                6,
+                7
+            ],
+            "estado_final": [
+                1,
+                6,
+                2,
+                5,
+                7,
+                4,
+                0,
+                3
+            ],
+            "h_final": 0,
+            "tempo_ms": 1.32
+        },
+        {
+            "estado_inicial": [
+                4,
+                2,
+                6,
+                6,
+                2,
+                7,
+                0,
+                6
+            ],
+            "estado_final": [
+                4,
+                7,
+                3,
+                0,
+                2,
+                5,
+                1,
+                6
+            ],
+            "h_final": 0,
+            "tempo_ms": 1.55
+        }
+    ],
+    "categorizacao": [
+        {
+            "id_execucao": 1,
+            "categoria": "Falha por Platô",
+            "destaque": "Interrupção em platô com h=1."
+        },
+        {
+            "id_execucao": 2,
+            "categoria": "Falha por Platô",
+            "destaque": "Interrupção em platô com h=1."
+        },
+        {
+            "id_execucao": 3,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Convergência eficiente em 6 iterações."
+        },
+        {
+            "id_execucao": 4,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Convergência eficiente em 6 iterações."
+        },
+        {
+            "id_execucao": 5,
+            "categoria": "Falha por Platô",
+            "destaque": "Preso em platô após 13 iterações."
+        },
+        {
+            "id_execucao": 6,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Convergência eficiente em 6 iterações."
+        },
+        {
+            "id_execucao": 7,
+            "categoria": "Falha por Ótimo Local",
+            "destaque": "Encontrou ótimo local rapidamente."
+        },
+        {
+            "id_execucao": 8,
+            "categoria": "Falha por Platô",
+            "destaque": "Preso em platô após 13 iterações."
+        },
+        {
+            "id_execucao": 9,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Convergência eficiente em 6 iterações."
+        },
+        {
+            "id_execucao": 10,
+            "categoria": "Falha por Platô",
+            "destaque": "Tempo de execução elevado para uma falha."
+        },
+        {
+            "id_execucao": 11,
+            "categoria": "Falha por Platô",
+            "destaque": "Máximo de iterações atingido em platô."
+        },
+        {
+            "id_execucao": 12,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Convergência eficiente em 6 iterações."
+        },
+        {
+            "id_execucao": 13,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Sucesso próximo ao limite da média de iterações."
+        },
+        {
+            "id_execucao": 14,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Sucesso próximo ao limite da média de iterações."
+        },
+        {
+            "id_execucao": 15,
+            "categoria": "Falha por Platô",
+            "destaque": "Preso em platô após 13 iterações."
+        },
+        {
+            "id_execucao": 16,
+            "categoria": "Falha por Platô",
+            "destaque": "Número de iterações acima da média antes da falha."
+        },
+        {
+            "id_execucao": 17,
+            "categoria": "Falha por Platô",
+            "destaque": "Preso em platô após 13 iterações."
+        },
+        {
+            "id_execucao": 18,
+            "categoria": "Falha por Platô",
+            "destaque": "Máximo de iterações atingido em platô."
+        },
+        {
+            "id_execucao": 19,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Convergência eficiente em 6 iterações."
+        },
+        {
+            "id_execucao": 20,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Um dos sucessos mais rápidos do conjunto."
+        },
+        {
+            "id_execucao": 21,
+            "categoria": "Falha por Platô",
+            "destaque": "Maior tempo de execução registrado no conjunto."
+        },
+        {
+            "id_execucao": 22,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Alta eficiência temporal (1.03ms)."
+        },
+        {
+            "id_execucao": 23,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Convergência em apenas 5 iterações."
+        },
+        {
+            "id_execucao": 24,
+            "categoria": "Sucesso Lento",
+            "destaque": "Único sucesso que demandou iterações acima da média."
+        },
+        {
+            "id_execucao": 25,
+            "categoria": "Falha por Ótimo Local",
+            "destaque": "Falha mais rápida registrada (0.78ms)."
+        },
+        {
+            "id_execucao": 26,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Convergência em 7 iterações."
+        },
+        {
+            "id_execucao": 27,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Convergência eficiente em 6 iterações."
+        },
+        {
+            "id_execucao": 28,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Melhor performance global (tempo e h=0)."
+        },
+        {
+            "id_execucao": 29,
+            "categoria": "Sucesso Rápido",
+            "destaque": "Convergência eficiente em 6 iterações."
+        },
+        {
+            "id_execucao": 30,
+            "categoria": "Falha por Platô",
+            "destaque": "Preso em platô após 13 iterações."
+        }
+    ]
+}

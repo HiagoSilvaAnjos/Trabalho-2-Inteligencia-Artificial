@@ -1,0 +1,1 @@
+Objetivo desta pasta: Armazenar a automação do ciclo de vida do experimento. Aqui deverá ser salvo o arquivo JSON (exportado do n8n) contendo o workflow de orquestração que interliga a execução do script Python com a geração da planilha de dados.
