@@ -38,7 +38,7 @@ A modelagem está **completamente correta e alinhada** com a especificação do 
 | Espaço de busca descrito | ✅ | Implícito no código (8⁸ estados) |
 | Critério de parada | ✅ | `h = 0` ou `max_iter`/`max_geracoes` atingido |
 
-> [!NOTE]
+> [NOTE]
 > Para o relatório, é recomendado formalizar com equação: `h(s) = Σᵢ<ⱼ [sᵢ=sⱼ ∨ |sᵢ-sⱼ|=|i-j|]` e mostrar o fluxograma.
 
 ---
@@ -99,7 +99,7 @@ O **Steepest Ascent Hill Climbing** varre toda a vizinhança de primeiro aprimor
 | Max. gerações: 1000 | ✅ | `--max_geracoes 1000` |
 | Parada antecipada | ✅ | Ao detectar `fitness == 28` (h=0) |
 
-> [!WARNING]
+> [ATENÇÃO]
 > **Divergência**: O professor especificou **tamanho de população = 20**, mas o código usa `TAMANHO_POPULACAO = 100` como padrão (linha 17 e argumento CLI `--tamanho_populacao 100`). Verifique com o professor ou ajuste o padrão para 20.
 
 ### Como a codificação binária foi usada:
@@ -145,17 +145,17 @@ O melhor indivíduo da geração anterior é sempre o primeiro inserido na nova 
 | valor final da função objetivo | ✅ | Campo `h_final` nos CSVs |
 | indicação de sucesso ou falha | ✅ | Campo `sucesso` (True/False) nos CSVs |
 
-> [!NOTE]
+> [NOTE]
 > O workflow JSON (`Trabalho2_n8n_workflow.json`) contém 8 nós completos e está exportável/importável diretamente no n8n. O README documenta cada nó na tabela "O COMPORTAMENTO DOS NÓS DO WORKFLOW".
 
-> [!WARNING]
-> **Atenção**: O workflow é configurado como sequencial (não paralelo). O README menciona "execução paralela" mas as conexões no JSON mostram: Iniciar → GRASP → AG → Unir → Gemini → Salvar → Gráficos → Resultado (sequencial). Verifique se isso é intencional.
+> [ATENÇÃO]
+> **Atenção**: O workflow é configurado como sequencial (não paralelo). O README menciona "execução paralela" mas as conexões no JSON mostram: Iniciar → GRASP → AG → Unir → Gemini → Salvar → Gráficos → Resultado (sequencial). Verifique se isso é intencional. RELAXA QUE ESSA PARTE AQUI EU JÁ RESOLVI. ;') 
 
 ---
 
 ## 6. ANÁLISE EXPERIMENTAL — Novos Gráficos e Tabelas
 
-O script [`analisar_comparativo.py`](file:///c:/Users/Edivaldo/Documents/GitHub/Trabalho-2-Inteligencia-Artificial/codigo/analisar_comparativo.py) foi expandido de **4 gráficos + 2 tabelas** para **10 gráficos + 5 tabelas**.
+O script [`analisar_comparativo.py`] foi expandido de **4 gráficos + 2 tabelas** para **10 gráficos + 5 tabelas**.
 
 ### Gráficos (10 no total):
 
