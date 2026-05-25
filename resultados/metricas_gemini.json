@@ -1,599 +1,605 @@
 {
-    "media_iteracoes_grasp": 4.12,
-    "desvio_padrao_iteracoes_grasp": 3.14,
-    "media_tempo_ms_grasp": 1.316,
-    "desvio_padrao_tempo_ms_grasp": 1.25,
-    "taxa_sucesso_pct_grasp": 100.0,
-    "valor_medio_h_final_grasp": 0.0,
-    "media_geracoes_ag": 369.62,
-    "desvio_padrao_geracoes_ag": 341.23,
-    "media_tempo_ms_ag": 509.77,
-    "desvio_padrao_tempo_ms_ag": 469.82,
-    "taxa_sucesso_pct_ag": 92.0,
-    "valor_medio_h_final_ag": 0.08,
-    "media_fitness_final_ag": 27.92,
-    "algoritmo_mais_rapido": "GRASP",
-    "algoritmo_maior_taxa_sucesso": "GRASP",
-    "algoritmo_mais_eficiente_iteracoes": "GRASP",
-    "conclusao_geral": "O algoritmo GRASP demonstrou superioridade absoluta para o problema das 8-rainhas em comparação ao Algoritmo Genético. O GRASP obteve 100% de sucesso com um tempo médio de execução de apenas 1.32ms, enquanto o AG levou em média 509.77ms e falhou em 8% das execuções. A natureza construtiva gulosa do GRASP, combinada com a busca local, mostrou-se extremamente eficaz para este espaço de busca específico, convergindo em pouquíssimas iterações, enquanto o AG exigiu centenas de gerações e uma carga computacional significativamente maior.",
+    "METRICAS_DO_GRASP": {
+        "media_iteracoes_grasp": 4.1,
+        "desvio_padrao_iteracoes_grasp": 3.41,
+        "media_tempo_ms_grasp": 1.33,
+        "desvio_padrao_tempo_ms_grasp": 1.25,
+        "taxa_sucesso_pct_grasp": 100,
+        "valor_medio_h_final_grasp": 0
+    },
+    "METRICAS_DO_AG": {
+        "media_geracoes_ag": 434.56,
+        "desvio_padrao_geracoes_ag": 348.2,
+        "media_tempo_ms_ag": 586.87,
+        "desvio_padrao_tempo_ms_ag": 470.5,
+        "taxa_sucesso_pct_ag": 88,
+        "valor_medio_h_final_ag": 0.12,
+        "media_fitness_final_ag": 27.88
+    },
+    "ANALISE_COMPARATIVA": {
+        "algoritmo_mais_rapido": "GRASP",
+        "algoritmo_maior_taxa_sucesso": "GRASP",
+        "algoritmo_mais_eficiente_iteracoes": "GRASP",
+        "conclusao_geral": "O algoritmo GRASP demonstrou superioridade absoluta sobre o Algoritmo Genético para o Problema das 8-Rainhas neste conjunto de dados. O GRASP atingiu 100% de sucesso com um tempo médio de execução de apenas 1.33ms, enquanto o AG falhou em 12% das tentativas e exigiu um tempo médio significativamente maior (586.87ms). A eficiência do GRASP deve-se à sua fase de construção gulosa aleatorizada combinada com busca local, que frequentemente encontra a solução ótima em pouquíssimas iterações, enquanto o AG demanda centenas de gerações e é mais suscetível a ficar preso em ótimos locais."
+    },
     "as_cinco_melhores_solucoes_ag": [
         {
             "estado_final": [
-                2,
-                7,
-                3,
                 6,
-                0,
-                5,
+                3,
                 1,
+                7,
+                5,
+                0,
+                2,
                 4
             ],
             "h_final": 0,
-            "geracao_parada": 13,
-            "tempo_ms": 18.25
+            "geracao_parada": 15,
+            "tempo_ms": 20.59
         },
         {
             "estado_final": [
                 4,
+                6,
                 0,
                 3,
-                5,
-                7,
                 1,
-                6,
+                7,
+                5,
                 2
-            ],
-            "h_final": 0,
-            "geracao_parada": 14,
-            "tempo_ms": 19.71
-        },
-        {
-            "estado_final": [
-                3,
-                5,
-                7,
-                1,
-                6,
-                0,
-                2,
-                4
             ],
             "h_final": 0,
             "geracao_parada": 18,
-            "tempo_ms": 25.08
+            "tempo_ms": 24.57
         },
         {
             "estado_final": [
+                5,
                 3,
+                0,
+                4,
+                7,
                 1,
                 6,
-                4,
-                0,
-                7,
-                5,
                 2
             ],
             "h_final": 0,
-            "geracao_parada": 26,
-            "tempo_ms": 36.1
+            "geracao_parada": 36,
+            "tempo_ms": 48.88
         },
         {
             "estado_final": [
                 3,
                 1,
                 7,
-                5,
+                4,
+                6,
                 0,
                 2,
-                4,
-                6
+                5
             ],
             "h_final": 0,
-            "geracao_parada": 30,
-            "tempo_ms": 41.91
+            "geracao_parada": 55,
+            "tempo_ms": 74.77
+        },
+        {
+            "estado_final": [
+                1,
+                6,
+                2,
+                5,
+                7,
+                4,
+                0,
+                3
+            ],
+            "h_final": 0,
+            "geracao_parada": 58,
+            "tempo_ms": 78.34
         }
     ],
     "CATEGORIZACAO_GRASP": [
         {
             "id_execucao": 1,
-            "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "categoria": "Moderado",
+            "destaque": "Busca local estendida"
         },
         {
             "id_execucao": 2,
             "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 3,
             "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 4,
-            "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 5,
-            "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "categoria": "Instantâneo",
+            "destaque": "Solução quase imediata"
         },
         {
             "id_execucao": 6,
-            "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "categoria": "Instantâneo",
+            "destaque": "Encontrado na construção"
         },
         {
             "id_execucao": 7,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Instantâneo",
+            "destaque": "Encontrado na construção"
         },
         {
             "id_execucao": 8,
             "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 9,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 10,
             "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 11,
-            "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "categoria": "Moderado",
+            "destaque": "Múltiplas reinicializações"
         },
         {
             "id_execucao": 12,
-            "categoria": "Complexo",
-            "destaque": "Máximo de iterações observado"
+            "categoria": "Moderado",
+            "destaque": "Pior caso observado"
         },
         {
             "id_execucao": 13,
-            "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "categoria": "Instantâneo",
+            "destaque": "Encontrado na construção"
         },
         {
             "id_execucao": 14,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Moderado",
+            "destaque": "Múltiplas reinicializações"
         },
         {
             "id_execucao": 15,
-            "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "categoria": "Moderado",
+            "destaque": "Busca local estendida"
         },
         {
             "id_execucao": 16,
-            "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "categoria": "Instantâneo",
+            "destaque": "Solução quase imediata"
         },
         {
             "id_execucao": 17,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 18,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Moderado",
+            "destaque": "Busca local estendida"
         },
         {
             "id_execucao": 19,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Moderado",
+            "destaque": "Busca local estendida"
         },
         {
             "id_execucao": 20,
-            "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "categoria": "Moderado",
+            "destaque": "Alta complexidade local"
         },
         {
             "id_execucao": 21,
             "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "destaque": "Encontrado na construção"
         },
         {
             "id_execucao": 22,
             "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 23,
-            "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "categoria": "Instantâneo",
+            "destaque": "Encontrado na construção"
         },
         {
             "id_execucao": 24,
-            "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "categoria": "Moderado",
+            "destaque": "Múltiplas reinicializações"
         },
         {
             "id_execucao": 25,
-            "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 26,
-            "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 27,
-            "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "categoria": "Moderado",
+            "destaque": "Busca local estendida"
         },
         {
             "id_execucao": 28,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Instantâneo",
+            "destaque": "Encontrado na construção"
         },
         {
             "id_execucao": 29,
-            "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 30,
             "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "destaque": "Encontrado na construção"
         },
         {
             "id_execucao": 31,
-            "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "categoria": "Moderado",
+            "destaque": "Múltiplas reinicializações"
         },
         {
             "id_execucao": 32,
-            "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "categoria": "Instantâneo",
+            "destaque": "Encontrado na construção"
         },
         {
             "id_execucao": 33,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Moderado",
+            "destaque": "Busca local estendida"
         },
         {
             "id_execucao": 34,
-            "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 35,
-            "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "categoria": "Moderado",
+            "destaque": "Busca local estendida"
         },
         {
             "id_execucao": 36,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 37,
             "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "destaque": "Encontrado na construção"
         },
         {
             "id_execucao": 38,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 39,
             "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 40,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Moderado",
+            "destaque": "Busca local estendida"
         },
         {
             "id_execucao": 41,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Instantâneo",
+            "destaque": "Encontrado na construção"
         },
         {
             "id_execucao": 42,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 43,
             "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 44,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 45,
-            "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "categoria": "Moderado",
+            "destaque": "Busca local estendida"
         },
         {
             "id_execucao": 46,
-            "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 47,
             "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "destaque": "Encontrado na construção"
         },
         {
             "id_execucao": 48,
             "categoria": "Rápido",
-            "destaque": "Convergência em poucas iterações"
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 49,
-            "categoria": "Complexo",
-            "destaque": "Exigiu maior busca local"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         },
         {
             "id_execucao": 50,
-            "categoria": "Instantâneo",
-            "destaque": "Encontrado na construção inicial"
+            "categoria": "Rápido",
+            "destaque": "Convergência rápida"
         }
     ],
     "CATEGORIZACAO_AG": [
         {
             "id_execucao": 1,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 2,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 3,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 4,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 5,
-            "categoria": "Limite de Gerações",
-            "destaque": "Falha ao encontrar ótimo global"
+            "categoria": "Convergência Lenta",
+            "destaque": "Próximo ao limite"
         },
         {
             "id_execucao": 6,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Rápida",
+            "destaque": "Alta aptidão inicial"
         },
         {
             "id_execucao": 7,
-            "categoria": "Limite de Gerações",
-            "destaque": "Falha ao encontrar ótimo global"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 8,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Falha",
+            "destaque": "Preso em ótimo local (h=1)"
         },
         {
             "id_execucao": 9,
-            "categoria": "Convergência Rápida",
-            "destaque": "População inicial favorável"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 10,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Rápida",
+            "destaque": "Alta aptidão inicial"
         },
         {
             "id_execucao": 11,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 12,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 13,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Falha",
+            "destaque": "Preso em ótimo local (h=1)"
         },
         {
             "id_execucao": 14,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 15,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 16,
             "categoria": "Convergência Rápida",
-            "destaque": "População inicial favorável"
+            "destaque": "Alta aptidão inicial"
         },
         {
             "id_execucao": 17,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 18,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 19,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Falha",
+            "destaque": "Preso em ótimo local (h=1)"
         },
         {
             "id_execucao": 20,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 21,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Falha",
+            "destaque": "Preso em ótimo local (h=1)"
         },
         {
             "id_execucao": 22,
-            "categoria": "Convergência Rápida",
-            "destaque": "População inicial favorável"
+            "categoria": "Falha",
+            "destaque": "Preso em ótimo local (h=1)"
         },
         {
             "id_execucao": 23,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 24,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Rápida",
+            "destaque": "Alta aptidão inicial"
         },
         {
             "id_execucao": 25,
             "categoria": "Convergência Rápida",
-            "destaque": "População inicial favorável"
+            "destaque": "Melhor performance AG"
         },
         {
             "id_execucao": 26,
-            "categoria": "Convergência Rápida",
-            "destaque": "População inicial favorável"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 27,
-            "categoria": "Limite de Gerações",
-            "destaque": "Falha ao encontrar ótimo global"
+            "categoria": "Convergência Média",
+            "destaque": "Evolução estável"
         },
         {
             "id_execucao": 28,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 29,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Rápida",
+            "destaque": "Alta aptidão inicial"
         },
         {
             "id_execucao": 30,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 31,
-            "categoria": "Convergência Rápida",
-            "destaque": "População inicial favorável"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 32,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 33,
-            "categoria": "Convergência Rápida",
-            "destaque": "Melhor tempo do AG"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 34,
-            "categoria": "Convergência Rápida",
-            "destaque": "População inicial favorável"
+            "categoria": "Convergência Média",
+            "destaque": "Evolução estável"
         },
         {
             "id_execucao": 35,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 36,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Falha",
+            "destaque": "Preso em ótimo local (h=1)"
         },
         {
             "id_execucao": 37,
-            "categoria": "Convergência Rápida",
-            "destaque": "População inicial favorável"
+            "categoria": "Convergência Média",
+            "destaque": "Evolução estável"
         },
         {
             "id_execucao": 38,
             "categoria": "Convergência Rápida",
-            "destaque": "População inicial favorável"
+            "destaque": "Alta aptidão inicial"
         },
         {
             "id_execucao": 39,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Rápida",
+            "destaque": "Alta aptidão inicial"
         },
         {
             "id_execucao": 40,
-            "categoria": "Convergência Rápida",
-            "destaque": "População inicial favorável"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 41,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 42,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 43,
-            "categoria": "Limite de Gerações",
-            "destaque": "Falha ao encontrar ótimo global"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 44,
-            "categoria": "Convergência Rápida",
-            "destaque": "População inicial favorável"
+            "categoria": "Convergência Média",
+            "destaque": "Evolução estável"
         },
         {
             "id_execucao": 45,
-            "categoria": "Convergência Rápida",
-            "destaque": "População inicial favorável"
+            "categoria": "Convergência Média",
+            "destaque": "Evolução estável"
         },
         {
             "id_execucao": 46,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 47,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Rápida",
+            "destaque": "Alta aptidão inicial"
         },
         {
             "id_execucao": 48,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         },
         {
             "id_execucao": 49,
-            "categoria": "Convergência Padrão",
-            "destaque": "Evolução estável"
+            "categoria": "Convergência Lenta",
+            "destaque": "Esforço elevado"
         },
         {
             "id_execucao": 50,
-            "categoria": "Convergência Padrão",
+            "categoria": "Convergência Média",
             "destaque": "Evolução estável"
         }
     ]
