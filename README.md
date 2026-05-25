@@ -12,15 +12,15 @@ O n8n opera como o controlador central da integração, enquanto a API Python at
 
 ### O Pipeline de Dados:
 
-1. **Execução paralela:** O n8n aciona simultaneamente duas rotas — `/executar-grasp` e `/executar-genetico`. Cada uma executa o respectivo algoritmo **50 vezes**, salva o histórico bruto em `.csv` e devolve um JSON encapsulado.
+1. **Execução sequencial:** O n8n aciona primeiro a rota `/executar-grasp` e, após a conclusão, aciona `/executar-genetico`. Cada rota executa o respectivo algoritmo **50 vezes**, salva o histórico bruto em `.csv` e devolve um JSON encapsulado.
 
 2. **Merge de resultados:** Um nó *Code* no n8n une os dados dos dois algoritmos em um único objeto JSON para envio ao Gemini.
 
-3. **Análise IA comparativa:** O n8n envia o JSON combinado para a API do **Google Gemini**, que analisa tempos de execução, iterações/gerações, taxas de sucesso e extrai as 5 melhores soluções do AG — gerando uma categorização textual detalhada para ambos os algoritmos.
+3. **Análise IA comparativa:** O n8n envia o JSON combinado para a API do **Google Gemini**, que analisa tempos de execução, iterações/gerações, taxas de sucesso e extrai as 5 melhores soluções de cada algoritmo — gerando uma categorização textual detalhada para ambos.
 
 4. **Persistência de Métricas:** O n8n devolve a resposta do Gemini para a API Python, que converte para JSON estruturado e salva em `metricas_gemini.json`.
 
-5. **Relatórios Visuais:** O n8n aciona `/gerar-graficos`, que dispara o `analisar_comparativo.py`. Esse script produz 10 gráficos e 5 tabelas comparativas detalhadas (GRASP vs AG) em `.png`.
+5. **Relatórios Visuais:** O n8n aciona `/gerar-graficos`, que dispara o `analisar_comparativo.py`. Esse script produz **10 gráficos e 5 tabelas** comparativas (GRASP vs AG) em `.png`.
 
 ---
 
@@ -29,13 +29,13 @@ O n8n opera como o controlador central da integração, enquanto a API Python at
 ```text
 Trabalho-IA - 2/
 │
-├── api_projeto.py               # API Flask Principal
+├── api_projeto.py               # API Flask Principal (porta 5000)
 ├── README.md                    # Este arquivo de documentação
 │
 ├── codigo/                      # Scripts de algoritmos e análise
 │   ├── grasp.py                 # Algoritmo GRASP (construção + busca local)
 │   ├── algoritmo_genetico.py    # Algoritmo Genético com codificação binária
-│   └── analisar_comparativo.py  # Gráficos e tabelas comparativas GRASP vs AG
+│   └── analisar_comparativo.py  # Gera 10 gráficos e 5 tabelas comparativas
 │
 ├── resultados/                  # Diretório de saída (gerado dinamicamente)
 │   ├── execucoes_grasp.csv                  # Histórico das 50 execuções do GRASP
@@ -110,6 +110,8 @@ n8n start
 3. Clique em **Add Workflow** > **Import from File**.
 4. Selecione o arquivo `Trabalho2_n8n_workflow.json` da pasta `workflow/`.
 
+> **Importante:** Se já havia um workflow importado anteriormente, delete-o e reimporte o arquivo atualizado, pois o JSON foi corrigido para usar `tamanho_populacao: 20` e para solicitar o Top 5 do GRASP ao Gemini.
+
 ### PASSO 5: Configurar a Chave da API do Gemini
 
 1. No fluxo importado, clique no nó **"Análise Gemini (Comparativa)"**.
@@ -122,11 +124,12 @@ n8n start
 1. Clique em **Execute Workflow** (ou *Test Workflow*).
 
 2. O sistema percorrerá as seguintes etapas automaticamente:
-   - Acionará **paralelamente** `/executar-grasp` e `/executar-genetico` (50 execuções cada).
+   - Acionará `/executar-grasp` (50 execuções) e aguardará a conclusão.
+   - Acionará `/executar-genetico` (50 execuções, população de 20) e aguardará.
    - Unirá os resultados no nó **Unir Resultados**.
    - Enviará os dados combinados ao **Google Gemini** para análise comparativa.
    - Acionará `/salvar-metricas` para persistir o JSON do Gemini.
-   - Acionará `/gerar-graficos` para gerar todos os gráficos e tabelas comparativas.
+   - Acionará `/gerar-graficos` para gerar os 10 gráficos e 5 tabelas comparativas.
 
 3. Quando todos os nós exibirem sinal verde, abra a pasta `resultados/`. Lá estarão os gráficos PNG e o JSON de métricas do experimento.
 
@@ -161,7 +164,7 @@ n8n start
 | Mutação | Bit flip | Taxa: **3% por bit** |
 | Elitismo | Sim | Melhor indivíduo sempre preservado |
 | `--max_geracoes` | 1000 | Critério de parada por gerações |
-| `--tamanho_populacao` | 100 | Indivíduos por geração |
+| `--tamanho_populacao` | **20** | Indivíduos por geração (conforme especificação) |
 
 ---
 
@@ -171,11 +174,11 @@ n8n start
 |---|---|---|
 | **Iniciar Experimento** | Manual Trigger | Botão de início do pipeline |
 | **GRASP (50 execuções)** | HTTP Request | `POST /executar-grasp` — executa o GRASP 50 vezes e salva `execucoes_grasp.csv` |
-| **Algoritmo Genético (50 execuções)** | HTTP Request | `POST /executar-genetico` — executa o AG 50 vezes e salva `execucoes_genetico.csv` |
+| **Algoritmo Genético (50 execuções)** | HTTP Request | `POST /executar-genetico` — executa o AG 50 vezes (pop=20) e salva `execucoes_genetico.csv` |
 | **Unir Resultados** | Code | Merge dos JSONs dos dois algoritmos em um único objeto |
-| **Análise Gemini (Comparativa)** | HTTP Request | `POST` à API Gemini com os dados dos dois algoritmos para análise comparativa |
+| **Análise Gemini (Comparativa)** | HTTP Request | `POST` à API Gemini — solicita métricas, Top 5 de cada algoritmo e categorização das 50 execuções |
 | **Salvar Métricas Gemini** | HTTP Request | `POST /salvar-metricas` — persiste o JSON do Gemini em disco |
-| **Gerar Gráficos e Tabelas** | HTTP Request | `POST /gerar-graficos` — dispara `analisar_comparativo.py` |
+| **Gerar Gráficos e Tabelas** | HTTP Request | `POST /gerar-graficos` — dispara `analisar_comparativo.py` (10 gráficos + 5 tabelas) |
 | **Resultado Final** | Code | Consolida o status e lista os arquivos gerados |
 
 ---
@@ -185,6 +188,6 @@ n8n start
 | Rota | Método | Descrição |
 |---|---|---|
 | `/executar-grasp` | POST | Executa o GRASP (parâmetros configuráveis no corpo JSON) |
-| `/executar-genetico` | POST | Executa o AG (parâmetros configuráveis no corpo JSON) |
-| `/gerar-graficos` | POST | Gera todos os gráficos e tabelas comparativas |
+| `/executar-genetico` | POST | Executa o AG com população de 20 (parâmetros configuráveis no corpo JSON) |
+| `/gerar-graficos` | POST | Gera os 10 gráficos e 5 tabelas comparativas |
 | `/salvar-metricas` | POST | Salva o JSON retornado pelo Gemini em `metricas_gemini.json` |

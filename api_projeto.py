@@ -75,12 +75,12 @@ def executar_genetico():
     Parâmetros (corpo JSON opcional):
       num_execucoes      : int (padrão 50)
       max_geracoes       : int (padrão 1000)
-      tamanho_populacao  : int (padrão 100)
+      tamanho_populacao  : int (padrão 20)
     """
     body = request.get_json(silent=True) or {}
     num_exec  = str(body.get("num_execucoes",     50))
     max_ger   = str(body.get("max_geracoes",      1000))
-    tam_pop   = str(body.get("tamanho_populacao", 100))
+    tam_pop   = str(body.get("tamanho_populacao", 20))
 
     script_path = os.path.join(BASE_DIR, "codigo", "algoritmo_genetico.py")
     try:

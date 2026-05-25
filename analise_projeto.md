@@ -89,7 +89,7 @@ O **Steepest Ascent Hill Climbing** varre toda a vizinhança de primeiro aprimor
 | Critério do professor | Status | Implementação |
 |---|---|---|
 | Codificação binária | ✅ | 24 bits (8 rainhas × 3 bits cada); `codificar()` e `decodificar()` |
-| Tamanho da população: 20 indivíduos | ⚠️ | **Implementado com 100** (o padrão do CLI é 100, não 20 como especificado) |
+| Tamanho da população: 20 indivíduos | ✅ | Implementado com 20 (o padrão do CLI é 20) |
 | Seleção por roleta | ✅ | `selecionar_roleta()` — probabilidade proporcional ao fitness |
 | Cruzamento ponto de corte | ✅ | `cruzar()` — único ponto de corte aleatório em [1, 23] |
 | Taxa de cruzamento: 80% | ✅ | `TAXA_CRUZAMENTO = 0.80` |
@@ -99,8 +99,7 @@ O **Steepest Ascent Hill Climbing** varre toda a vizinhança de primeiro aprimor
 | Max. gerações: 1000 | ✅ | `--max_geracoes 1000` |
 | Parada antecipada | ✅ | Ao detectar `fitness == 28` (h=0) |
 
-> [ATENÇÃO]
-> **Divergência**: O professor especificou **tamanho de população = 20**, mas o código usa `TAMANHO_POPULACAO = 100` como padrão (linha 17 e argumento CLI `--tamanho_populacao 100`). Verifique com o professor ou ajuste o padrão para 20.
+
 
 ### Como a codificação binária foi usada:
 Cada rainha ocupa 3 bits (pois `ceil(log₂(8)) = 3`). Um indivíduo = cromossomo de 24 bits. Exemplo: estado `[3,5,0,...]` → `[0,1,1, 1,0,1, 0,0,0, ...]`. Valores > 7 são mapeados com `% 8` ao decodificar, garantindo sempre um estado válido.
@@ -147,9 +146,6 @@ O melhor indivíduo da geração anterior é sempre o primeiro inserido na nova 
 
 > [NOTE]
 > O workflow JSON (`Trabalho2_n8n_workflow.json`) contém 8 nós completos e está exportável/importável diretamente no n8n. O README documenta cada nó na tabela "O COMPORTAMENTO DOS NÓS DO WORKFLOW".
-
-> [ATENÇÃO]
-> **Atenção**: O workflow é configurado como sequencial (não paralelo). O README menciona "execução paralela" mas as conexões no JSON mostram: Iniciar → GRASP → AG → Unir → Gemini → Salvar → Gráficos → Resultado (sequencial). Verifique se isso é intencional. RELAXA QUE ESSA PARTE AQUI EU JÁ RESOLVI. ;') 
 
 ---
 

@@ -1,66 +1,128 @@
 {
-    "media_iteracoes_grasp": 4.86,
-    "desvio_padrao_iteracoes_grasp": 3.41,
-    "media_tempo_ms_grasp": 0.9838,
-    "desvio_padrao_tempo_ms_grasp": 0.998,
+    "media_iteracoes_grasp": 5.08,
+    "desvio_padrao_iteracoes_grasp": 5.37,
+    "media_tempo_ms_grasp": 0.885,
+    "desvio_padrao_tempo_ms_grasp": 1.12,
     "taxa_sucesso_pct_grasp": 100.0,
     "valor_medio_h_final_grasp": 0.0,
-    "media_geracoes_ag": 469.02,
-    "desvio_padrao_geracoes_ag": 386.21,
-    "media_tempo_ms_ag": 889.12,
-    "desvio_padrao_tempo_ms_ag": 785.61,
-    "taxa_sucesso_pct_ag": 80.0,
-    "valor_medio_h_final_ag": 0.2,
-    "media_fitness_final_ag": 27.8,
+    "media_geracoes_ag": 623.88,
+    "desvio_padrao_geracoes_ag": 407.2,
+    "media_tempo_ms_ag": 142.84,
+    "desvio_padrao_tempo_ms_ag": 115.7,
+    "taxa_sucesso_pct_ag": 56.0,
+    "valor_medio_h_final_ag": 0.44,
+    "media_fitness_final_ag": 27.56,
     "algoritmo_mais_rapido": "GRASP",
     "algoritmo_maior_taxa_sucesso": "GRASP",
     "algoritmo_mais_eficiente_iteracoes": "GRASP",
-    "conclusao_geral": "O algoritmo GRASP demonstrou superioridade absoluta em relação ao Algoritmo Genético para o Problema das 8-Rainhas. O GRASP obteve 100% de sucesso com um tempo médio de execução inferior a 1ms, enquanto o AG teve uma taxa de sucesso de 80% e tempo médio próximo a 889ms. A eficiência do GRASP é evidenciada pelo baixo número de iterações necessárias para convergência, contrastando com o AG, que frequentemente atingiu o limite de 1000 gerações sem encontrar a solução ótima.",
+    "conclusao_geral": "O algoritmo GRASP demonstrou superioridade absoluta em relação ao Algoritmo Genético para o Problema das 8-Rainhas. Enquanto o GRASP obteve 100% de sucesso com um tempo médio inferior a 1ms e pouquíssimas iterações, o AG falhou em convergir em 44% das execuções, apresentando um tempo médio significativamente maior e alta variabilidade. A natureza construtiva combinada com a busca local do GRASP mostrou-se muito mais eficaz para este espaço de busca específico do que a abordagem populacional do AG.",
     "as_cinco_melhores_solucoes_ag": [
         {
             "estado_final": [
-                2,
-                4,
-                6,
-                0,
                 3,
                 1,
+                4,
                 7,
-                5
-            ],
-            "h_final": 0,
-            "geracao_parada": 14,
-            "tempo_ms": 31.93
-        },
-        {
-            "estado_final": [
-                2,
                 5,
-                3,
-                1,
-                7,
-                4,
-                6,
-                0
+                0,
+                2,
+                6
             ],
             "h_final": 0,
             "geracao_parada": 21,
-            "tempo_ms": 43.36
+            "tempo_ms": 2.73
+        },
+        {
+            "estado_final": [
+                6,
+                4,
+                2,
+                0,
+                5,
+                7,
+                1,
+                3
+            ],
+            "h_final": 0,
+            "geracao_parada": 62,
+            "tempo_ms": 7.45
         },
         {
             "estado_final": [
                 4,
+                2,
+                0,
+                6,
                 1,
                 7,
-                0,
-                3,
-                6,
-                2,
-                5
+                5,
+                3
             ],
             "h_final": 0,
-            "geracao_parada": 25,
-            "tempo_ms": 49.4
+            "geracao_parada": 77,
+            "tempo_ms": 9.08
+        },
+        {
+            "estado_final": [
+                6,
+                3,
+                1,
+                7,
+                5,
+                0,
+                2,
+                4
+            ],
+            "h_final": 0,
+            "geracao_parada": 64,
+            "tempo_ms": 9.33
+        },
+        {
+            "estado_final": [
+                3,
+                5,
+                7,
+                2,
+                0,
+                6,
+                4,
+                1
+            ],
+            "h_final": 0,
+            "geracao_parada": 66,
+            "tempo_ms": 9.85
+        }
+    ],
+    "as_cinco_melhores_solucoes_grasp": [
+        {
+            "estado_final": [
+                3,
+                6,
+                4,
+                2,
+                0,
+                5,
+                7,
+                1
+            ],
+            "h_final": 0,
+            "iteracoes": 1,
+            "tempo_ms": 0.03
+        },
+        {
+            "estado_final": [
+                3,
+                1,
+                6,
+                2,
+                5,
+                7,
+                0,
+                4
+            ],
+            "h_final": 0,
+            "iteracoes": 1,
+            "tempo_ms": 0.03
         },
         {
             "estado_final": [
@@ -74,527 +136,542 @@
                 1
             ],
             "h_final": 0,
-            "geracao_parada": 40,
-            "tempo_ms": 85.47
+            "iteracoes": 1,
+            "tempo_ms": 0.04
         },
         {
             "estado_final": [
-                3,
-                0,
-                4,
-                7,
+                2,
+                5,
                 1,
                 6,
-                2,
-                5
+                0,
+                3,
+                7,
+                4
             ],
             "h_final": 0,
-            "geracao_parada": 40,
-            "tempo_ms": 95.32
+            "iteracoes": 1,
+            "tempo_ms": 0.04
+        },
+        {
+            "estado_final": [
+                4,
+                1,
+                5,
+                0,
+                6,
+                3,
+                7,
+                2
+            ],
+            "h_final": 0,
+            "iteracoes": 1,
+            "tempo_ms": 0.04
         }
     ],
     "CATEGORIZACAO_GRASP": [
         {
             "id_execucao": 1,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 2,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 3,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 4,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 5,
-            "categoria": "Instantâneo",
-            "destaque": "Custo computacional mínimo"
+            "categoria": "Instantânea",
+            "destaque": "Encontrado na primeira tentativa"
         },
         {
             "id_execucao": 6,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 7,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 8,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 9,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 10,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 11,
-            "categoria": "Instantâneo",
-            "destaque": "Custo computacional mínimo"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 12,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 13,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Instantânea",
+            "destaque": "Encontrado na primeira tentativa"
         },
         {
             "id_execucao": 14,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Instantânea",
+            "destaque": "Encontrado na primeira tentativa"
         },
         {
             "id_execucao": 15,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Instantânea",
+            "destaque": "Encontrado na primeira tentativa"
         },
         {
             "id_execucao": 16,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 17,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Complexa",
+            "destaque": "Exigiu mais de 10 iterações"
         },
         {
             "id_execucao": 18,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 19,
-            "categoria": "Instantâneo",
-            "destaque": "Custo computacional mínimo"
+            "categoria": "Instantânea",
+            "destaque": "Encontrado na primeira tentativa"
         },
         {
             "id_execucao": 20,
-            "categoria": "Instantâneo",
-            "destaque": "Custo computacional mínimo"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 21,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Complexa",
+            "destaque": "Pior caso observado"
         },
         {
             "id_execucao": 22,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Instantânea",
+            "destaque": "Encontrado na primeira tentativa"
         },
         {
             "id_execucao": 23,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 24,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 25,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Instantânea",
+            "destaque": "Encontrado na primeira tentativa"
         },
         {
             "id_execucao": 26,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Instantânea",
+            "destaque": "Encontrado na primeira tentativa"
         },
         {
             "id_execucao": 27,
-            "categoria": "Instantâneo",
-            "destaque": "Custo computacional mínimo"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 28,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 29,
-            "categoria": "Complexo",
-            "destaque": "Maior esforço de busca"
+            "categoria": "Instantânea",
+            "destaque": "Encontrado na primeira tentativa"
         },
         {
             "id_execucao": 30,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 31,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 32,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 33,
-            "categoria": "Instantâneo",
-            "destaque": "Custo computacional mínimo"
+            "categoria": "Instantânea",
+            "destaque": "Encontrado na primeira tentativa"
         },
         {
             "id_execucao": 34,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 35,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 36,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 37,
-            "categoria": "Instantâneo",
-            "destaque": "Custo computacional mínimo"
+            "categoria": "Instantânea",
+            "destaque": "Encontrado na primeira tentativa"
         },
         {
             "id_execucao": 38,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 39,
-            "categoria": "Instantâneo",
-            "destaque": "Custo computacional mínimo"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 40,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 41,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 42,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 43,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 44,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 45,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Rápida",
+            "destaque": "Poucas iterações"
         },
         {
             "id_execucao": 46,
-            "categoria": "Médio",
-            "destaque": "Busca local robusta"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 47,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 48,
-            "categoria": "Instantâneo",
-            "destaque": "Custo computacional mínimo"
+            "categoria": "Instantânea",
+            "destaque": "Encontrado na primeira tentativa"
         },
         {
             "id_execucao": 49,
-            "categoria": "Complexo",
-            "destaque": "Maior esforço de busca"
+            "categoria": "Padrão",
+            "destaque": "Convergência estável"
         },
         {
             "id_execucao": 50,
-            "categoria": "Rápido",
-            "destaque": "Alta eficiência"
+            "categoria": "Complexa",
+            "destaque": "Exigiu mais de 10 iterações"
         }
     ],
     "CATEGORIZACAO_AG": [
         {
             "id_execucao": 1,
-            "categoria": "Convergência Tardia",
-            "destaque": "Estabilidade final"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 2,
-            "categoria": "Limite Atingido",
-            "destaque": "Estagnação em ótimo local"
+            "categoria": "Convergência Lenta",
+            "destaque": "Sucesso após 600 gerações"
         },
         {
             "id_execucao": 3,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Convergência Rápida",
+            "destaque": "Sucesso em menos de 100 gerações"
         },
         {
             "id_execucao": 4,
-            "categoria": "Convergência Tardia",
-            "destaque": "Estabilidade final"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 5,
-            "categoria": "Convergência Precoce",
-            "destaque": "Alta velocidade"
+            "categoria": "Convergência Lenta",
+            "destaque": "Sucesso após 500 gerações"
         },
         {
             "id_execucao": 6,
-            "categoria": "Limite Atingido",
-            "destaque": "Estagnação em ótimo local"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 7,
-            "categoria": "Convergência Tardia",
-            "destaque": "Estabilidade final"
+            "categoria": "Convergência Média",
+            "destaque": "Sucesso entre 100 e 500 gerações"
         },
         {
             "id_execucao": 8,
-            "categoria": "Limite Atingido",
-            "destaque": "Estagnação em ótimo local"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 9,
-            "categoria": "Limite Atingido",
-            "destaque": "Estagnação em ótimo local"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 10,
-            "categoria": "Limite Atingido",
-            "destaque": "Estagnação em ótimo local"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 11,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Convergência Média",
+            "destaque": "Sucesso entre 100 e 500 gerações"
         },
         {
             "id_execucao": 12,
-            "categoria": "Convergência Tardia",
-            "destaque": "Estabilidade final"
+            "categoria": "Convergência Média",
+            "destaque": "Sucesso entre 100 e 500 gerações"
         },
         {
             "id_execucao": 13,
-            "categoria": "Limite Atingido",
-            "destaque": "Estagnação em ótimo local"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 14,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 15,
-            "categoria": "Convergência Precoce",
-            "destaque": "Alta velocidade"
+            "categoria": "Convergência Lenta",
+            "destaque": "Sucesso após 700 gerações"
         },
         {
             "id_execucao": 16,
-            "categoria": "Limite Atingido",
-            "destaque": "Estagnação em ótimo local"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 17,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Convergência Lenta",
+            "destaque": "Sucesso após 500 gerações"
         },
         {
             "id_execucao": 18,
-            "categoria": "Convergência Precoce",
-            "destaque": "Alta velocidade"
+            "categoria": "Convergência Rápida",
+            "destaque": "Sucesso em menos de 100 gerações"
         },
         {
             "id_execucao": 19,
-            "categoria": "Convergência Tardia",
-            "destaque": "Estabilidade final"
+            "categoria": "Convergência Lenta",
+            "destaque": "Sucesso após 600 gerações"
         },
         {
             "id_execucao": 20,
-            "categoria": "Limite Atingido",
-            "destaque": "Estagnação em ótimo local"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 21,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Convergência Lenta",
+            "destaque": "Sucesso após 500 gerações"
         },
         {
             "id_execucao": 22,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Convergência Rápida",
+            "destaque": "Melhor caso observado"
         },
         {
             "id_execucao": 23,
-            "categoria": "Convergência Tardia",
-            "destaque": "Estabilidade final"
+            "categoria": "Convergência Média",
+            "destaque": "Sucesso entre 100 e 500 gerações"
         },
         {
             "id_execucao": 24,
-            "categoria": "Limite Atingido",
-            "destaque": "Estagnação em ótimo local"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 25,
-            "categoria": "Convergência Precoce",
-            "destaque": "Alta velocidade"
+            "categoria": "Convergência Média",
+            "destaque": "Sucesso entre 100 e 500 gerações"
         },
         {
             "id_execucao": 26,
-            "categoria": "Convergência Tardia",
-            "destaque": "Estabilidade final"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 27,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 28,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Convergência Rápida",
+            "destaque": "Sucesso em menos de 100 gerações"
         },
         {
             "id_execucao": 29,
-            "categoria": "Convergência Tardia",
-            "destaque": "Estabilidade final"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 30,
-            "categoria": "Convergência Precoce",
-            "destaque": "Alta velocidade"
+            "categoria": "Convergência Rápida",
+            "destaque": "Sucesso em menos de 100 gerações"
         },
         {
             "id_execucao": 31,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Convergência Média",
+            "destaque": "Sucesso entre 100 e 500 gerações"
         },
         {
             "id_execucao": 32,
-            "categoria": "Convergência Tardia",
-            "destaque": "Estabilidade final"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 33,
-            "categoria": "Convergência Tardia",
-            "destaque": "Estabilidade final"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 34,
-            "categoria": "Convergência Tardia",
-            "destaque": "Estabilidade final"
+            "categoria": "Convergência Rápida",
+            "destaque": "Sucesso em menos de 100 gerações"
         },
         {
             "id_execucao": 35,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Convergência Lenta",
+            "destaque": "Sucesso após 500 gerações"
         },
         {
             "id_execucao": 36,
-            "categoria": "Limite Atingido",
-            "destaque": "Estagnação em ótimo local"
+            "categoria": "Convergência Média",
+            "destaque": "Sucesso entre 100 e 500 gerações"
         },
         {
             "id_execucao": 37,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Convergência Média",
+            "destaque": "Sucesso entre 100 e 500 gerações"
         },
         {
             "id_execucao": 38,
-            "categoria": "Convergência Precoce",
-            "destaque": "Alta velocidade"
+            "categoria": "Convergência Média",
+            "destaque": "Sucesso entre 100 e 500 gerações"
         },
         {
             "id_execucao": 39,
-            "categoria": "Convergência Precoce",
-            "destaque": "Alta velocidade"
+            "categoria": "Convergência Média",
+            "destaque": "Sucesso entre 100 e 500 gerações"
         },
         {
             "id_execucao": 40,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 41,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Convergência Rápida",
+            "destaque": "Sucesso em menos de 100 gerações"
         },
         {
             "id_execucao": 42,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 43,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Convergência Lenta",
+            "destaque": "Sucesso após 600 gerações"
         },
         {
             "id_execucao": 44,
-            "categoria": "Convergência Tardia",
-            "destaque": "Estabilidade final"
+            "categoria": "Convergência Lenta",
+            "destaque": "Sucesso após 700 gerações"
         },
         {
             "id_execucao": 45,
-            "categoria": "Convergência Precoce",
-            "destaque": "Alta velocidade"
+            "categoria": "Convergência Média",
+            "destaque": "Sucesso entre 100 e 500 gerações"
         },
         {
             "id_execucao": 46,
-            "categoria": "Convergência Precoce",
-            "destaque": "Alta velocidade"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 47,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Convergência Média",
+            "destaque": "Sucesso entre 100 e 500 gerações"
         },
         {
             "id_execucao": 48,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 49,
-            "categoria": "Convergência Precoce",
-            "destaque": "Alta velocidade"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         },
         {
             "id_execucao": 50,
-            "categoria": "Convergência Padrão",
-            "destaque": "Desempenho esperado"
+            "categoria": "Falha na Convergência",
+            "destaque": "Atingiu limite de 1000 gerações"
         }
     ]
 }

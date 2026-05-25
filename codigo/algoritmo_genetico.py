@@ -14,7 +14,7 @@ MAX_CONFLITOS = 28      # C(8,2) = 28 pares possíveis → fitness máximo = 28
 # Parâmetros fixos conforme especificação do professor
 TAXA_CRUZAMENTO = 0.80  # 80 % dos pares passam pelo cruzamento
 TAXA_MUTACAO = 0.03     # 3 % de chance por bit de sofrer bit-flip
-TAMANHO_POPULACAO = 100 # tamanho padrão da população
+TAMANHO_POPULACAO = 20 # tamanho padrão da população
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -256,8 +256,8 @@ def main():
                         help="Número de execuções independentes do AG")
     parser.add_argument("--max_geracoes", type=int, default=1000,
                         help="Número máximo de gerações por execução")
-    parser.add_argument("--tamanho_populacao", type=int, default=100,
-                        help="Tamanho da população em cada geração")
+    parser.add_argument("--tamanho_populacao", type=int, default=20,
+                        help="Tamanho da população em cada geração (padrão 20 conforme especificação)")
     parser.add_argument("--seed", type=int, default=None,
                         help="Semente para o gerador de números aleatórios")
 
