@@ -20,7 +20,7 @@ O n8n opera como o controlador central da integração, enquanto a API Python at
 
 4. **Persistência de Métricas:** O n8n devolve a resposta do Gemini para a API Python, que converte para JSON estruturado e salva em `metricas_gemini.json`.
 
-5. **Relatórios Visuais:** O n8n aciona `/gerar-graficos`, que dispara o `analisar_comparativo.py`. Esse script produz gráficos e tabelas comparativas lado a lado (GRASP vs AG) em `.png`.
+5. **Relatórios Visuais:** O n8n aciona `/gerar-graficos`, que dispara o `analisar_comparativo.py`. Esse script produz 10 gráficos e 5 tabelas comparativas detalhadas (GRASP vs AG) em `.png`.
 
 ---
 
@@ -38,15 +38,24 @@ Trabalho-IA - 2/
 │   └── analisar_comparativo.py  # Gráficos e tabelas comparativas GRASP vs AG
 │
 ├── resultados/                  # Diretório de saída (gerado dinamicamente)
-│   ├── execucoes_grasp.csv               # Histórico das 50 execuções do GRASP
-│   ├── execucoes_genetico.csv            # Histórico das 50 execuções do AG
-│   ├── metricas_gemini.json              # Análise estruturada do Google Gemini
-│   ├── comp_grafico1_taxa_sucesso.png    # Barras: Taxa de sucesso GRASP vs AG
-│   ├── comp_grafico2_tempo_execucao.png  # Barras com erro: Tempo médio ± desvio
+│   ├── execucoes_grasp.csv                  # Histórico das 50 execuções do GRASP
+│   ├── execucoes_genetico.csv               # Histórico das 50 execuções do AG
+│   ├── metricas_gemini.json                 # Análise estruturada do Google Gemini
+│   ├── comp_grafico1_taxa_sucesso.png       # Barras: Taxa de sucesso e falha
+│   ├── comp_grafico2_tempo_execucao.png     # Barras com erro: Tempo médio ± desvio
 │   ├── comp_grafico3_iteracoes_geracoes.png # Boxplot: Iterações vs Gerações
 │   ├── comp_grafico4_hfinal_execucoes.png   # Linha: h_final por execução
+│   ├── comp_grafico5_distribuicao_tempo.png # Histograma duplo de tempo
+│   ├── comp_grafico6_scatter_tempo_iter.png # Dispersão: Tempo x Iterações
+│   ├── comp_grafico7_histograma_hfinal.png  # Frequência de conflitos finais
+│   ├── comp_grafico8_convergencia_acumulada.png # Sucessos acumulados
+│   ├── comp_grafico9_violin_tempo.png       # Densidade completa do tempo
+│   ├── comp_grafico10_radar_comparativo.png # Comparação multidimensional
 │   ├── comp_tabela_resumo_estatistico.png   # Tabela comparativa completa
-│   └── comp_tabela_top5_ag.png              # Top 5 soluções distintas do AG
+│   ├── comp_tabela_top5_ag.png              # Top 5 soluções distintas do AG
+│   ├── comp_tabela_top5_grasp.png           # Top 5 soluções distintas do GRASP
+│   ├── comp_tabela_percentis.png            # Percentis de iter. e tempo (P0-P100)
+│   └── comp_tabela_analise_qualidade.png    # Estabilidade e coef. de variação
 │
 └── workflow/                    # Arquivo de exportação do n8n
     └── Trabalho2_n8n_workflow.json  # Fluxo completo do Trabalho 2
